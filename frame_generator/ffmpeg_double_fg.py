@@ -66,23 +66,15 @@ class FfmpegDoubleFrameGenerator(Thread):
 
         self.end = False
         params = [
-            ("f", "lavfi"),
-            ("i", f"color=white:s={self.size2width}"),
             ("f", "x11grab"),
             ("video_size", self.size),
             ("framerate", self.framerate),
             ("i", self._get_display()),
-            ("f", "x11grab"),
-            ("video_size", self.size),
-            ("framerate", self.framerate),
-            ("i", self._get_display()),
-            ("filter_complex", f'"overlay,overlay={self.width}:0"'),
+            ("filter_complex", f'split[lenl][lenr];[lenl]crop=iw/2:ih:iw/2:0,lenscorrection=k1=0.58101:k2=0[a];[lenr]crop=iw/2:ih:0:0,lenscorrection=k1=0.58101:k2=0[b];[b][a]hstack'),
             ("loglevel", "error"),
             ("nostdin", ""),
-            ("s", self.size),
-            ("framerate", self.framerate),
             ("f", "mjpeg"),
-            # ("vsync", self.vsync),
+#            ("vsync", self.vsync),
         ]
         ffmpeg_cmd = self.api(self.optirun, params)
         log.info(f"ffmpeg cmd: {ffmpeg_cmd}")
