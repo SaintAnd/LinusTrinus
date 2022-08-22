@@ -45,7 +45,7 @@ Detailed installation instructions in [INSTALL.md](INSTALL.md).
 
 ### Capture windows other than SteamVR
 1. Enter to terminal:
-xwininfo | grep "Window id" | sed "s/.* \"/\"/"
+xwininfo | grep "Window id" | sed "s/.* \\"/\"/"
 2. Click on the window you want to capture.
 3. Edit parametr window_id = self.find_window_id("SteamVR Compositor") in file frame_generator/xwd_fg.py
 
