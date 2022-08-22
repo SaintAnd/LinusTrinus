@@ -32,7 +32,16 @@ Detailed installation instructions in [INSTALL.md](INSTALL.md).
 ## Solution for Xiaomi and other devices
 
 ### Black screen
-Edit the "width" and "height" parameters in the frame_generator/ffmpeg double_fg.py file to the monitor resolution.
+1. Edit the "width" and "height" parameters in the frame_generator/ffmpeg double_fg.py file to the monitor resolution.
+
+### Phone/head too big/small. Lens correction - it renders both eyes squeezed on the bottom half of the screen.
+1. Install wine or use windows
+2. Install Trinus for windows on wine or windows (version for Google Cardboard)
+3. Start Trinus (cd $PATH_TO_TRINUS && wine TGServer.exe)
+4. Press "Start" in program and press start "trinus" on android, then activate this program.
+5. When will be connect program and device you can change "Head mount" in top "Main".
+6. Exit Trinus
+7. Start LinusTrinus on Linux and enjoy
 
 ## Thanks
 
