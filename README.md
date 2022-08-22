@@ -31,7 +31,7 @@ Detailed installation instructions in [INSTALL.md](INSTALL.md).
 
 ## Solution for Xiaomi and other devices
 
-# Black screen
+### Black screen
 Edit the "width" and "height" parameters in the frame_generator/ffmpeg double_fg.py file to the monitor resolution.
 
 ## Thanks
